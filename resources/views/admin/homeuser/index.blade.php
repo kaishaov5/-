@@ -30,8 +30,15 @@
                     	<input type="checkbox" class="js-switch" checked />
                     </td>
                     <td style="width:30%;">
-                    	<a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 查看文章 </a>
-                    	<a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>查看帖子 </a>
+
+                        @if($homeUser->articles->count() > 0)
+                    	<a href="{{ action('Admin\HomeUserController@article',$homeUser->id) }}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 查看文章 </a>
+                        @endif
+
+                        @if($homeUser->posts->count() > 0)
+                    	<a href="{{ action('Admin\HomeUserController@post',$homeUser->id) }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>查看帖子 </a>
+                        @endif
+
                     </td>
                 </tr>
             @endforeach

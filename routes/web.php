@@ -18,6 +18,9 @@
 //前台首页
 Route::get('/', 'IndexController@index');
 
+//个人中心
+Route::get('/personal/{id}', 'PersonalController@index');
+
 //分类页
 Route::get('/cate/{id}.html', 'CateController@index');
 //详情页

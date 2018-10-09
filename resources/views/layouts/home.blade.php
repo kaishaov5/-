@@ -47,7 +47,7 @@
         </div>
      </div> -->
      <div style="margin-right:5px;" class="fr login">
-        <a href="/login" target="_blank">
+        <a href="/login">
           <span class="toolbar_no">
             <i></i>
             登录
@@ -76,15 +76,15 @@
       <div style="width:610px;height:90px;margin-left:60px;" class="head_search_c fl">
         <div class="head_search fl">
            <div id="bdcs">
-             <div class="bdcs-container"> 
-                 <div class="bdcs-main bdcs-clearfix" id="default-searchbox">      
-                   <div class="bdcs-search bdcs-clearfix" id="bdcs-search-inline">          
-                     <form action="" method="get" class="bdcs-search-form" id="bdcs-search-form">                                                                       
-                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词" style="height: 38px; line-height: 38px;">              
-                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" value="搜索">                       
-                    </form>      
-                   </div>                  
-                </div>                           
+             <div class="bdcs-container">
+                 <div class="bdcs-main bdcs-clearfix" id="default-searchbox">
+                   <div class="bdcs-search bdcs-clearfix" id="bdcs-search-inline">
+                     <form action="" method="get" class="bdcs-search-form" id="bdcs-search-form">
+                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词" style="height: 38px; line-height: 38px;">
+                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" value="搜索">
+                    </form>
+                   </div>
+                </div>
              </div>
           </div>
         </div>
@@ -113,7 +113,7 @@
     <a href="/" class="on">首页</a>
     <a href="{{ action('BbsController@index') }}" target="_blank">论坛</a>
     @if(Auth::check() && Auth::id())
-    <a href="">个人中心</a>
+    <a href="{{ action('PersonalController@index',Auth::id()) }}">个人中心</a>
     @endif
   </div>
 </div>

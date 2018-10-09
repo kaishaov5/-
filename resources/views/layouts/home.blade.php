@@ -80,8 +80,8 @@
                  <div class="bdcs-main bdcs-clearfix" id="default-searchbox">      
                    <div class="bdcs-search bdcs-clearfix" id="bdcs-search-inline">          
                      <form action="" method="get" class="bdcs-search-form" id="bdcs-search-form">                                                                       
-                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词" style="height: 38px; line-height: 38px;">              
-                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" value="搜索">                       
+                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词搜索" autocomplete="off" style="height: 38px; line-height: 38px;border-right:1px solid red">              
+                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" style="width:0px;" value="搜索">                       
                     </form>      
                    </div>                  
                 </div>                           
@@ -187,6 +187,8 @@
 
 <script type="text/javascript" src="/home/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/home/js/js.js"></script>
+
+<script type="text/javascript" src="/home/js/search.js"></script>
 @section('js')
 
 @show

@@ -59,6 +59,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//搜索路由
+ //搜索框智能下拉联想
+ Route::post('/search/input','SearchController@search');
+
+ //点击搜索后跳转到的页面
+ Route::get('/search','SearchController@index');
+
+
 //后台路由
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth.admin'], function () {

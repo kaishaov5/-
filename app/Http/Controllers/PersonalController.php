@@ -9,11 +9,11 @@ class PersonalController extends Controller
 {
     public function index(Request $request){
 
+        //判断点击进入个人中心的是本人还是他人
         if(Auth::id() == $request->id){
-            echo "本人";
+            return view('home.personal.benren');
         }else{
-            echo "他人";
-        }
 
+        }
     }
 }

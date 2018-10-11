@@ -168,7 +168,7 @@
       <dd><a rel="nofollow" href="http://www.1980cang.com/index.php?controller=site&action=help&id=73" title="经营资质" target="_blank"> 经营资质</a></dd>
       <dd><a rel="nofollow" href="http://www.1980cang.com/index.php?controller=site&action=help&id=72" title="关于我们" target="_blank"> 关于我们</a></dd>
     </dl>
-    <dl ">
+    <dl>
       <img src="/home/images/kf.jpg" width="200" height="120" style="margin-top: 50px;">
     </dl>
   </div>

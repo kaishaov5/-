@@ -1,0 +1,89 @@
+#s-contoiner {
+	/*border:1px solid red;*/
+	margin-right: auto; margin-left: auto;
+	width:1200px;
+	height:700px;
+	margin-bottom:40px;
+}
+
+.s-head {
+	background: -webkit-linear-gradient(left,rgba(210,32,48,0),rgba(210,32,48,2)); /* Safari 5.1 - 6 */
+	background: -o-linear-gradient(right,rgba(210,32,48,0),rgba(210,32,48,2)); /* Opera 11.1 - 12*/
+	background: -moz-linear-gradient(right,rgba(210,32,48,0),rgba(210,32,48,2)); /* Firefox 3.6 - 15*/
+	background: linear-gradient(to left, rgba(210,32,48,0), rgba(210,32,48,2)); /* 标准的语法 */
+	color:white;
+	padding:10px;
+	border-radius:8px 0px 0px 8px;
+}
+
+.s-head-a  {
+	font-weight:bold;
+	font-size:20px;
+}
+
+.s-head-b {
+	font-weight:bold;
+	color:black;
+	float:right;
+	color:#CCC;
+}
+
+
+.s-head-b a:hover{
+	color:#271D19;
+	text-decoration: underline;
+}
+
+#s-detail {
+	height:600px;
+	width:100%;
+	border:1px solid red;
+}
+
+.s-detail-left {
+	float:left;
+	width:50%;
+	height:100%;
+	border:1px solid red;
+}
+
+.s-detail-right {
+	float:left;
+	width:50%;
+	height:100%
+	border:1px solid black;
+}
+
+
+.s-detail-left-line {
+	margin-top:9px;
+	padding-left:10px;
+	padding-right:10px;
+	float:left;
+	width:100%;
+}
+
+.s-post-title{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	height:22px;
+	width:80%;
+	float:left;
+}
+
+.s-post-title a:hover{
+	transition:0.3s;
+}
+.s-post-auth > a{
+	float:right;
+	width:20%;
+	height:22px;
+	color:#717171;
+}
+
+.s-post-auth > a:hover{
+	color:#FF6600;
+	transition:0.3s;
+}
+

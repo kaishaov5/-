@@ -18,6 +18,9 @@
 //前台首页
 Route::get('/', 'IndexController@index');
 
+//个人中心
+Route::get('/personal/{id}', 'PersonalController@index');
+
 //分类页
 Route::get('/cate/{id}.html', 'CateController@index');
 //详情页
@@ -56,6 +59,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//搜索路由
+ //搜索框智能下拉联想
+ Route::post('/search/input','SearchController@search');
+
+ //点击搜索后跳转到的页面
+ Route::get('/search','SearchController@index');
+
+
 //后台路由
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth.admin'], function () {
@@ -72,9 +83,12 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('homeuser', 'Admin\HomeUserController@index');
         Route::get('homeuser/add', 'Admin\HomeUserController@add');
         Route::post('homeuser/store', 'Admin\HomeUserController@store');
+
             //查看前台用户发布的文章
-            
+            Route::get('homeuser/article/{id}', 'Admin\HomeUserController@article');
+
             //查看前台用户发布的帖子
+            Route::get('homeuser/post/{id}', 'Admin\HomeUserController@post');
 
         //分类模块
         Route::get('cate', 'Admin\CateController@index');
@@ -136,10 +150,10 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('bbs/post/reply/updateDetail', 'Admin\PostController@updateReplyDetail');
             Route::get('bbs/post/reply/delete/{id}', 'Admin\PostController@replyDelete');
     });
- 
+
     Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'Admin\LoginController@login');
     Route::post('logout', 'Admin\LoginController@logout');
     Route::post('article/uploadpic', 'Admin\ArticleController@uploadpic');
-    
+
 });

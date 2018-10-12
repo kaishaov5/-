@@ -1,0 +1,60 @@
+/* 个人中心中间的框 */
+#personal_con{
+    margin:0 auto;
+    width:1200px;
+    border:1px solid #ccc;
+}
+
+/* 左栏 */
+#personal_left{
+    padding-top:15px;
+    float:left;
+    margin-bottom:10px;
+    width:240px;
+    height:500px;
+    background-color:#CB152C;
+}
+
+/* 左栏下的用户信息 */
+.personal_left_photo{
+    float:left;
+    width:100%;
+    height:170px;
+    /* border:1px solid blue; */
+}
+
+/* 左栏下的用户头像 */
+.personal_left_photo > div:first-of-type{
+    float:left;
+    width:100%;
+    height:160px;
+    text-align:center;
+}
+
+/* 用户头像 */
+.personal_left_photo > div:first-of-type > img{
+    padding:3px;
+    width:125px;
+    border-radius:75px;
+    background-color:white;
+    box-shadow: 0px 5px 10px #3B3B3B;
+}
+
+/* 用户名 */
+.personal_left_photo > div:first-of-type > span{
+    float:left;
+    text-align:center;
+    width:100%;
+    margin-top:10px;
+    color:white;
+    font-size:21px;
+}
+
+/* 右栏 */
+#personal_right{
+    float:left;
+    margin-bottom:10px;
+    margin-left:16px;
+    width:940px;
+    /* border:1px solid green; */
+}

@@ -13,6 +13,10 @@
 
 <!-- 公共样式 -->
 <link rel="stylesheet" type="text/css" href="/home/css/css.css">
+
+<!-- 搜索下拉显示样式 -->
+<link rel="stylesheet" type="text/css" href="/home/css/searchview.css">
+
 </head>
 
 @section('css')
@@ -47,7 +51,7 @@
         </div>
      </div> -->
      <div style="margin-right:5px;" class="fr login">
-        <a href="/login" target="_blank">
+        <a href="/login">
           <span class="toolbar_no">
             <i></i>
             登录
@@ -75,17 +79,54 @@
       <a style="background-image:url('{{ $config->logo }}')" href="https://www.1980cang.com/" target="_blank" class="head_logo fl"></a>
       <div style="width:610px;height:90px;margin-left:60px;" class="head_search_c fl">
         <div class="head_search fl">
-           <div id="bdcs">
+           <div id="bdcs" style="position:relative">
              <div class="bdcs-container"> 
                  <div class="bdcs-main bdcs-clearfix" id="default-searchbox">      
                    <div class="bdcs-search bdcs-clearfix" id="bdcs-search-inline">          
-                     <form action="" method="get" class="bdcs-search-form" id="bdcs-search-form">                                                                       
-                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词" style="height: 38px; line-height: 38px;">              
-                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" value="搜索">                       
-                    </form>      
-                   </div>                  
+                     <form action="/search" method="get" class="bdcs-search-form" id="bdcs-search-form">                                                                       
+                       <input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词搜索" autocomplete="off" style="height: 38px; line-height: 38px;border-right:1px solid red">              
+                       <input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" style="width:0px;" value="搜索"> 
+                    </form>
+                   </div>
                 </div>                           
              </div>
+            <!-- 搜索下拉显示部分 -->
+            <div id="searchview">
+                <!-- 文章 -->
+                <div> 
+                    <div class="search-son">
+                      <span class="searchTitle">文章</span>
+                    </div>
+
+                    <div class="search">
+                      <div>很抱歉没有找到相关文章，点击搜索试一试</div>
+                    </div>
+                </div>
+                <!-- 帖子 -->
+                <div>
+                  <div class="search-son">
+                    <span class="searchTitle">帖子</span>
+                  </div>
+
+                  <div class="search">
+                    <div>很抱歉没有找到相关帖子，点击搜索试一试</div>
+                  </div>
+
+                </div>
+                <!-- 用户 -->
+                <div>
+
+                  <div class="search-son">
+                    <span class="searchTitle">用户</span>
+                  </div>
+
+                  <div class="search">
+                    <div>很抱歉没有找到相关用户，点击搜索试一试</div>
+                  </div>
+
+                </div>
+            </div>
+
           </div>
         </div>
  <div class="head_hot fl">
@@ -96,7 +137,7 @@
     <a href="https://www.1980cang.com/list-156.html" target="_blank">纪念币</a>
     <a href="https://www.1980cang.com/list-165.html" target="_blank">金银币</a>
     <a href="https://www.1980cang.com/list-4.html" target="_blank">第二版人民币</a>
- </div>
+ </div> 
 </div>
  <div id="A1" class="fr" style="width:250px;height:80px;border:1px solid #ccc;margin-top:6px;">
    <a target="_blank" href="https://www.1980cang.com/list-593.html">
@@ -113,7 +154,7 @@
     <a href="/" class="on">首页</a>
     <a href="{{ action('BbsController@index') }}" target="_blank">论坛</a>
     @if(Auth::check() && Auth::id())
-    <a href="">个人中心</a>
+    <a href="{{ action('PersonalController@index',Auth::id()) }}">个人中心</a>
     @endif
   </div>
 </div>
@@ -168,7 +209,7 @@
       <dd><a rel="nofollow" href="http://www.1980cang.com/index.php?controller=site&action=help&id=73" title="经营资质" target="_blank"> 经营资质</a></dd>
       <dd><a rel="nofollow" href="http://www.1980cang.com/index.php?controller=site&action=help&id=72" title="关于我们" target="_blank"> 关于我们</a></dd>
     </dl>
-    <dl ">
+    <dl>
       <img src="/home/images/kf.jpg" width="200" height="120" style="margin-top: 50px;">
     </dl>
   </div>
@@ -187,6 +228,8 @@
 
 <script type="text/javascript" src="/home/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/home/js/js.js"></script>
+
+<script type="text/javascript" src="/home/js/search.js"></script>
 @section('js')
 
 @show

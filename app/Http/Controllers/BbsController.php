@@ -20,7 +20,7 @@ class BbsController extends Controller
     		//最新帖子
     		$bbsCate['newPosts'] = Post::where('bbs_cate_id',$bbsCate->id)->orderBy('time','desc')->limit(6)->get();
 
-    		//最热帖子 
+    		//最热帖子
     		$bbsCate['hotPosts'] = Post::where('bbs_cate_id',$bbsCate->id)->orderBy('access_count','desc')->limit(3)->get();
     	}
 
@@ -36,7 +36,7 @@ class BbsController extends Controller
     	$posts = Post::where('bbs_cate_id',$request->id)->orderBy('time','desc')->paginate(12);
 
     	//查询总帖数
-    		$countPost = Post::where('bbs_cate_id',$request->id)->count('id');
+    		$countPost = Post::where('bbs_cate_id',$request->id)->count();
 
     	//查询出今日发帖多少个
     		//1.先获取今日凌晨时间戳
@@ -44,7 +44,7 @@ class BbsController extends Controller
 
     		//2.查询这个版块下大于等于$time的帖子数量
     		$todyPost = Post::where('bbs_cate_id',$request->id)->where('time','>',$time)->count();
-    	
+
     	return view('home.bbs.zicate',compact('cate','posts','todyPost','countPost'));
     }
 
@@ -76,16 +76,16 @@ class BbsController extends Controller
     	$zicates = BbsCate::where('pid',$request->id)->get();
 
     	foreach($zicates as $k=>$v){
-    		$v['todyPost'] = Post::where('bbs_cate_id',$v->id)->where('time','>',$time)->count('id');
+    		$v['todyPost'] = Post::where('bbs_cate_id',$v->id)->where('time','>',$time)->count();
 
-    		$v['countPost'] = Post::where('bbs_cate_id',$v->id)->count('id');
+    		$v['countPost'] = Post::where('bbs_cate_id',$v->id)->count();
 
     		$posts = Post::where('bbs_cate_id',$v->id)->get();
 
     		$countReply = 0;
     		foreach($posts as $post){
 
-    			$count = $post->replies->count('id');
+    			$count = $post->replies->count();
 
     			$countReply += $count;
 
@@ -98,10 +98,9 @@ class BbsController extends Controller
     	$posts = Post::where('bbs_cate_id',$request->id)->orderBy('time','desc')->paginate(12);
 
     	//查询总帖数
-    		$countPost = Post::where('bbs_cate_id',$request->id)->count('id');
+    		$countPost = Post::where('bbs_cate_id',$request->id)->count();
 
     	//查询出今日发帖多少个
-    		
 
     		//2.查询这个版块下大于等于$time的帖子数量
     		$todyPost = Post::where('bbs_cate_id',$request->id)->where('time','>',$time)->count();

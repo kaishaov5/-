@@ -20,6 +20,11 @@ Route::get('/', 'IndexController@index');
 
 //个人中心
 Route::get('/personal/{id}', 'PersonalController@index');
+    //修改密码
+    Route::get('/personal/password/{id}', 'PersonalController@password');
+    Route::post('/personal/updatePassword', 'PersonalController@updatePassword');
+    //验证旧密码
+    Route::post('/personal/changePassword', 'PersonalController@changePassword');
 
 //分类页
 Route::get('/cate/{id}.html', 'CateController@index');

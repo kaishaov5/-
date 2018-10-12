@@ -201,13 +201,11 @@ $('#comment-commit').click(function(){
     if(detail.length > 0 && dds.length != 0){
         if(detail.match(/^\s*$/)){
             alert('不能提交空的评论或只提交图片');
-            $(this).attr('flag','1');
             $text1.val(' ');
             return false;
         }
     }else{
         alert('不能提交空的评论或只提交图片');
-        $(this).attr('flag','1');
         $text1.val(' ');
         return false;
     }
@@ -236,7 +234,7 @@ $('#comment-commit').click(function(){
                 </div>`);
                 $text1.val(' ');
                 $('.w-e-text').empty();
-                console.log( $('#comment-commit').attr('flag'));
+
                 $('#comment-commit').attr('flag','1');
             }
         },
@@ -248,4 +246,7 @@ $('#comment-commit').click(function(){
 
 
 </script>
-<?php $__env-
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

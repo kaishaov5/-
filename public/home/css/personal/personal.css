@@ -2,7 +2,7 @@
 #personal_con{
     margin:0 auto;
     width:1200px;
-    border:1px solid #ccc;
+    height:600px;
 }
 
 /* 左栏 */
@@ -11,7 +11,7 @@
     float:left;
     margin-bottom:10px;
     width:240px;
-    height:500px;
+    height:100%;
     background-color:#CB152C;
 }
 
@@ -50,11 +50,51 @@
     font-size:21px;
 }
 
+/* 左栏下的链接 */
+.personal_left_photo > div:nth-of-type(2){
+    float:left;
+    margin-top:5px;
+    width:100%;
+    /* border:1px solid green; */
+}
+
+.left_xk{
+    float:left;
+    width:100%;
+    margin-bottom:15px;
+}
+
+.left_xk > span{
+    float:left;
+    padding-left:20px;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    font-size:17px;
+    font-weight:bold;
+    color:#003366;
+}
+
+.left_xk > a{
+    float:left;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    padding-left:30px;
+    color:white;
+}
+
+.left_xk > a:hover{
+    background-color:#B90815;
+}
+
 /* 右栏 */
 #personal_right{
     float:left;
+    padding:10px;
     margin-bottom:10px;
-    margin-left:16px;
-    width:940px;
-    /* border:1px solid green; */
+    width:960px;
+    height:100%;
+    border:1px solid #ccc;
+    border-left:0px;
 }

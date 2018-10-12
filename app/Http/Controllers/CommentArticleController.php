@@ -9,26 +9,33 @@ use Illuminate\Http\Request;
 class CommentArticleController extends Controller
 {
 
-	//用户只有登录之后才能进行评论
-	public function __construct(){
+    //用户只有登录之后才能进行评论
+    public function __construct(){
         $this->middleware('auth')->except('uploadpic');
     }
 
     //对文章进行评论
     public function store(Request $request){
-    	CommentArticle::create([
-    		'user_id' => Auth::id(),
-    		'article_id' => $request->article_id,
-    		'comment' => $request->detail,
-    		'time' => time()
-    	]);
 
-    	return redirect()->action('ArticleController@index',$request->article_id);
+        $flag = CommentArticle::create([
+            'user_id' => Auth::id(),
+            'article_id' => $request->article_id,
+            'comment' => $request->detail,
+            'time' => time()
+        ]);
+
+        if($flag) {
+            return '1';
+        }else{
+            return '2';
+        }
+
+
     }
 
     //上传图片
     public function uploadpic(Request $request){
-    	$arr = ["errno"=>0,"data"=>[]];
+        $arr = ["errno"=>0,"data"=>[]];
         $file = $request->file('file');
         $filePath =[];  // 定义空数组用来存放图片路径
         foreach($file as $key => $value) {

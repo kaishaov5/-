@@ -64,16 +64,16 @@
                 </div>
                 <form id="form" class="form-horizontal" action="{{ action('CommentArticleController@store') }}" method="post">
                     {{ csrf_field() }}
-                    <input type="hidden" name="article_id" value="{{ $article->id }}">
+                    <input type="hidden" name="article_id" id="article_id" value="{{ $article->id }}">
                     <div id='detail'></div>
                     <textarea id="text1" name='detail' style="width:100%; height:200px;display:none;"></textarea>
-                    <button style="background-color:#7FB4CB;margin-top:10px;" type="submit" class="btn btn-info btn-block">确认提交</button>
+                    <button flag="1" style="background-color:#7FB4CB;margin-top:10px;" type="submit" class="btn btn-info btn-block" id="comment-commit">确认提交</button>
                 </form>
             </div>
         </div>
         @endif
 
-        <div>
+        <div id="comment-father">
             @foreach($comments as $comment)
             <div class="plcontent">
                 <div class="userinfo">
@@ -178,5 +178,72 @@ editor.customConfig.uploadImgHooks = {
 editor.create()
 // 初始化 textarea 的值
 $text1.val(' ')
+
+
+//判断用户点击几次,同时利用ajax进行上传，直接操作DOM让评论在页面中显示出来
+$('#comment-commit').click(function(){
+
+    console.log($(this).attr('flag'));
+
+
+    if($(this).attr('flag') == '0') {
+        return false;
+    }
+
+    $(this).attr('flag','0');
+    
+    //获取评论的内容   
+    var detail = $text1.val();
+    //去除HTML标签方便判断
+    var dd=detail.replace(/<\/?.+?>/g,"");
+    var dds=dd.replace(/ /g,"");//dds为得到后的内容
+    if(detail.length > 0 && dds.length != 0){
+        if(detail.match(/^\s*$/)){
+            alert('不能提交空的评论或只提交图片');
+            $text1.val(' ');
+            return false;
+        }
+    }else{
+        alert('不能提交空的评论或只提交图片');
+        $text1.val(' ');
+        return false;
+    }
+
+    //获取文章的id
+    var article_id = $('#article_id').val();
+
+    $.ajax({  
+        type : "POST",  //提交方式
+        url : "/commentArticle/store",//路径
+        data : {  
+            "detail" : detail, 
+            'article_id': article_id, 
+        },//数据，这里使用的是Json格式进行传输  
+        success : function(result) {
+            if(result == '1'){
+                $('#comment-father').prepend(`<div id="comment-father">
+                    <div class="plcontent">
+                        <div class="userinfo">
+                            <b>{{Auth::user()->name}}</b>
+                        </div>
+                        <div class="usercontent">
+                            `+detail+`
+                        </div>
+                    </div>
+                </div>`);
+                $text1.val(' ');
+                $('.w-e-text').empty();
+
+                $('#comment-commit').attr('flag','1');
+            }
+        },
+
+    })
+    return false;
+})
+
+
+
 </script>
 @endsection
+

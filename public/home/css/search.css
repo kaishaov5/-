@@ -13,12 +13,16 @@
 	background: linear-gradient(to left, rgba(210,32,48,0), rgba(210,32,48,2)); /* 标准的语法 */
 	color:white;
 	padding:10px;
+	width:1200px;
+	float:left;
+	margin-top:10px;
 	border-radius:8px 0px 0px 8px;
 }
 
 .s-head-a  {
 	font-weight:bold;
 	font-size:20px;
+	width:1200px;
 }
 
 .s-head-b {
@@ -35,50 +39,76 @@
 }
 
 #s-detail {
-	height:600px;
+	/*height:600px;*/
 	width:100%;
-	border:1px solid red;
 }
 
-.s-detail-left {
+.s-detail {
 	float:left;
-	width:50%;
-	height:100%;
-	border:1px solid red;
+	width:100%;
+	/*height:600px;*/
+	border-right:1px solid #CCC;
 }
 
-.s-detail-right {
-	float:left;
-	width:50%;
-	height:100%
-	border:1px solid black;
-}
-
-
-.s-detail-left-line {
+.s-detail-line {
 	margin-top:9px;
 	padding-left:10px;
 	padding-right:10px;
 	float:left;
 	width:100%;
+	height:22px;
+}
+
+.s-post-img {
+	/*border:1px solid red;*/
+	height:25px;
+	width:8%;
+	float:left;
+    display: flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .s-post-title{
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
-	height:22px;
-	width:80%;
+	height:25px;
+	width:40%;
 	float:left;
+	/*border:1px solid red;*/
 }
 
-.s-post-title a:hover{
-	transition:0.3s;
+.s-post-title > a{
+		font-size:17px;
 }
-.s-post-auth > a{
-	float:right;
+
+.s-detail-d {
+	/*border:1px solid red;*/
+	float:left;
+	height:25px;
 	width:20%;
-	height:22px;
+	padding-left:15px;
+	color:#2C4967;
+	font-size:13px;
+	line-height: 25px;
+}
+.s-detail-d > span {
+	color:#2C4967;
+}
+.s-post-auth {
+	/*border:1px solid red;*/
+	float:right;
+	width:17%;
+	height:25px;
+	font-size:13px;
+	line-height:25px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+} 
+
+.s-post-auth > a{
 	color:#717171;
 }
 
@@ -87,3 +117,58 @@
 	transition:0.3s;
 }
 
+.s-time {
+	width:13%;
+	float:left;
+	font-size:14px;
+	line-height:26px;
+	overflow: hidden;
+}
+
+
+.s-nopost {
+	height:50px;
+	width:100%;
+	float:left;
+	font-size:30px;
+	font-weight:bold;
+	text-align:center;
+	line-height:50px;
+}
+
+.s-user {
+	height:90px;
+	float:left;
+	width:25%;
+	box-shadow:5px 5px 5px #CCC;
+	margin-top:15px;
+}
+
+.s-user-img {
+	width:90px;
+	height:90px;
+	/*border:1px solid red;*/
+	float:left;
+	padding:10px;
+}
+.s-user-img img {
+	width:100%;
+	height:100%;
+}
+
+.s-user-detail {
+	float:left;
+	width:69%;
+	height:100%;
+	/*border:1px solid red;*/
+	padding:10px;
+}
+
+.s-user-name{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width:100%;
+	height:30px;
+
+}

@@ -78,7 +78,7 @@
 				<div class="list_a">
 			    	<a href="" target="_blank">{{ $post->user->name }}</a>
 				</div>
-				<div class="list_c">{{ $post->replies->count('id') }}</div>
+				<div class="list_c">{{ $post->replies->count() }}</div>
 				<div class="list_c">{{ $post->access_count }}</div>
 				<div class="list_t">
 			    	<a href="">{{ date('Y-m-d H:i:s',$post->time) }}</a>

@@ -31,6 +31,18 @@ class SearchController extends Controller
     public function index(Request $request) {
 
     	// dump($request->all());
-    	return view('home.Search.Index');
+    	//接收到的值
+    	$q = $request->all()['q'];
+
+    	//进行查询
+	    	//帖子
+	    	$post = Post::where('title','like','%'.$q.'%')->limit(20)->with('user')->get();
+	    	//文章
+	    	$article = Article::where('title','like','%'.$q.'%')->limit(20)->with('user')->get();
+	    	//用户
+	    	$user = User::where('name','like','%'.$q.'%')->limit(20)->get();
+
+	    //返回数据
+    	return view('home.Search.Index',compact('post','article','user'));
     }
 }

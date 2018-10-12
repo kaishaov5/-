@@ -1,0 +1,139 @@
+[33mcommit dfc0a4820a660b15a19be6f1c6228840a0852384[m[33m ([m[1;36mHEAD -> [m[1;32mraven[m[33m, [m[1;31morigin/raven[m[33m)[m
+Merge: 24691f6 9c5faa1
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Fri Oct 12 16:36:46 2018 +0800
+
+    !6 从 CK 合并到  Raven
+    Merge pull request !6 from 陈凯/CK
+
+[33mcommit 9c5faa1835e7a6cf22c81252cab24935ea3bb290[m
+Author: chenkai <1062483463@qq.com>
+Date:   Fri Oct 12 16:35:55 2018 +0800
+
+    three day first
+
+[33mcommit 24691f6cc1a464d4824b63b5a36036908ebf668b[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Fri Oct 12 14:50:54 2018 +0800
+
+    three day raven
+
+[33mcommit 215cbfcfe8f7e99f37ba41ee2cff2f80ed563920[m
+Merge: 64cdea3 7526969
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Thu Oct 11 10:29:01 2018 +0800
+
+    !5 two 合并CK
+    Merge pull request !5 from 陈凯/raven
+
+[33mcommit 752696903760d0e4093338aa1c62ea415fdb1a79[m
+Merge: c81fe8a 64cdea3
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Thu Oct 11 10:27:45 2018 +0800
+
+    !4 two day first
+    Merge pull request !4 from 陈凯/CK
+
+[33mcommit c81fe8a53e53dde22a6e08827627e5a63efd0338[m
+Merge: f50ec38 09c644c
+Author: HallelujahR <15043319951@163.com>
+Date:   Thu Oct 11 10:24:04 2018 +0800
+
+    201810111023
+
+[33mcommit 64cdea38633087cf56606c973a010e52f85a361a[m
+Author: chenkai <1062483463@qq.com>
+Date:   Thu Oct 11 10:01:12 2018 +0800
+
+    two day first
+
+[33mcommit f50ec38310a1c454ea80395e2800787337bf6f36[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 18:21:55 2018 +0800
+
+    201810091821
+
+[33mcommit 3cfdd788082d7de38a07f92b5d8e9582fbf70588[m
+Merge: 91b7a65 09c644c
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Tue Oct 9 18:19:30 2018 +0800
+
+    !3 one 合并 ck
+    Merge pull request !3 from 陈凯/raven
+
+[33mcommit 91b7a65721ce523e4b29ecc85ba181ac6f62d552[m
+Author: chenkai <1062483463@qq.com>
+Date:   Tue Oct 9 18:18:14 2018 +0800
+
+    one day second
+
+[33mcommit 09c644c90a0b1737ef728203ad2fe4b08499699a[m
+Merge: fa32f93 91b7a65
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Tue Oct 9 18:17:58 2018 +0800
+
+    !2 one  合并
+    Merge pull request !2 from 陈凯/CK
+
+[33mcommit fa32f9381cfadadcf9c07a91af93171079569a2d[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 17:18:52 2018 +0800
+
+    登陆注册 没有找回密码
+
+[33mcommit 20c930ff46047a4ee8555292891c680f97d414eb[m
+Author: chenkai <1062483463@qq.com>
+Date:   Tue Oct 9 16:03:58 2018 +0800
+
+    one day first
+
+[33mcommit 6b768b2991b6ab05dbeaafd623f9921c23b45509[m
+Merge: b3155e9 b975fdc
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 14:36:18 2018 +0800
+
+    Merge branch 'master' of gitee.com:ckaid/cczx into raven
+
+[33mcommit b975fdc49f0198695bd417a03fe6f63fe70dd215[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 283378b 005f164
+Author: A-陈凯 <1062483463@qq.com>
+Date:   Tue Oct 9 14:35:20 2018 +0800
+
+    !1 合并vendor
+    Merge pull request !1 from 陈凯/CK
+
+[33mcommit 005f1645aef2e064e06490a0549bda526ba1eff3[m
+Author: chenkai <1062483463@qq.com>
+Date:   Tue Oct 9 14:35:02 2018 +0800
+
+    vendor目录
+
+[33mcommit b3155e9af3489f9c5d0313b192208fa0e7297f56[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 14:24:54 2018 +0800
+
+    remove test2
+
+[33mcommit 2a8e84b92bf06ce8076c97b19e0337bbcea7a3cb[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 14:23:49 2018 +0800
+
+    raven test2
+
+[33mcommit 283378b5fe872ca201d2c0efdca177acc76b739e[m[33m ([m[1;32mmaster[m[33m)[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 14:21:48 2018 +0800
+
+    remove test.php
+
+[33mcommit 3b1ad175ca9112e798b17df582e13f9aa592747e[m
+Author: HallelujahR <15043319951@163.com>
+Date:   Tue Oct 9 14:20:00 2018 +0800
+
+    test
+
+[33mcommit edea2e0407ef67c79a9f234c3723645d892188c0[m[33m ([m[1;31morigin/Raven[m[33m)[m
+Author: chenkai <1062483463@qq.com>
+Date:   Tue Oct 9 11:55:19 2018 +0800
+
+    first Raven
